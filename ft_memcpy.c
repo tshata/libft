@@ -6,7 +6,7 @@
 /*   By: tshata <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 11:55:11 by tshata            #+#    #+#             */
-/*   Updated: 2018/06/05 09:12:00 by tshata           ###   ########.fr       */
+/*   Updated: 2018/06/22 12:31:44 by tshata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*ptr;
 	char	*ptr1;
 
-	ptr = dest;
+	ptr = (char *)dest;
 	ptr1 = (char *)src;
 	i = 0;
 	while (i < n)

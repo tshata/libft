@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshata <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/27 11:54:57 by tshata            #+#    #+#             */
-/*   Updated: 2018/06/19 16:07:48 by tshata           ###   ########.fr       */
+/*   Created: 2018/06/06 17:11:39 by tshata            #+#    #+#             */
+/*   Updated: 2018/06/23 13:02:11 by tshata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_memalloc(size_t size)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*mem;
+	t_list *newlink;
 
-	mem = (char *)malloc(size);
-	if (!mem)
+	newlink = (t_list *)malloc(sizeof(t_list));
+	if (!newlink)
 		return (NULL);
+	newlink->next = NULL;
+	if (content != NULL)
+	{
+		newlink->content = (size_t *)malloc(content_size);
+		if ((newlink->content) == NULL)
+			return (NULL);
+		ft_memcpy(newlink->content, content, content_size);
+		newlink->content_size = content_size;
+	}
 	else
-		ft_bzero(mem, size);
-	return (mem);
+	{
+		newlink->content = NULL;
+		newlink->content_size = 0;
+	}
+	return (newlink);
 }

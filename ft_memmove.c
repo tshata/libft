@@ -6,7 +6,7 @@
 /*   By: tshata <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 11:55:52 by tshata            #+#    #+#             */
-/*   Updated: 2018/06/04 15:21:52 by tshata           ###   ########.fr       */
+/*   Updated: 2018/06/21 13:37:26 by tshata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	char	*c_src;
 
 	if (!dest && !src)
-		return (0);
+		return (NULL);
 	c_dest = (char *)dest;
 	c_src = (char *)src;
 	if (dest >= src)

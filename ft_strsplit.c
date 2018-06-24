@@ -6,7 +6,7 @@
 /*   By: tshata <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 13:42:09 by tshata            #+#    #+#             */
-/*   Updated: 2018/06/05 13:32:01 by tshata           ###   ########.fr       */
+/*   Updated: 2018/06/07 14:25:34 by tshata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ static	int	ft_word_count(char const *str, char c)
 
 	i = 0;
 	wordcount = 0;
-	while (str[i] && str[i] == c)
-		i++;
 	while (str[i])
 	{
 		while (str[i] && str[i] == c)
@@ -34,16 +32,17 @@ static	int	ft_word_count(char const *str, char c)
 		}
 	}
 	return (wordcount);
-}	
-char	**ft_strsplit(char const *s, const char c)
+}
+
+char		**ft_strsplit(char const *s, const char c)
 {
 	char	**str;
 	int		i;
 	int		start;
 	size_t	size;
-	
+
 	if (!s || !(str = (char **)malloc(sizeof(char *) *
-				   	(ft_word_count(s, c) + 1))))
+					(ft_word_count(s, c) + 1))))
 		return (NULL);
 	i = 0;
 	size = 0;

@@ -6,7 +6,7 @@
 /*   By: tshata <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 10:20:14 by tshata            #+#    #+#             */
-/*   Updated: 2018/06/05 13:37:04 by tshata           ###   ########.fr       */
+/*   Updated: 2018/06/14 14:57:47 by tshata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static	int	ft_iswhitespace(int s)
 
 char		*ft_strtrim(const char *s)
 {
-	unsigned int	i;
+	size_t			i;
 	size_t			len;
 	char			*str;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (ft_iswhitespace(s[i]))
 		i++;
@@ -33,5 +33,5 @@ char		*ft_strtrim(const char *s)
 		len--;
 	if (len < i)
 		return (str = ft_strdup(""));
-	return (str = ft_strsub(s, i, len - (size_t)i + 1));
+	return (str = ft_strsub(s, i, len - i + 1));
 }
